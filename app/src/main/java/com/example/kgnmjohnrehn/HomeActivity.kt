@@ -16,7 +16,11 @@ import com.example.kgnmjohnrehn.recycler.LogAdapter
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
-
+// to do, logic for single deletion,
+// auto complete last written inputs
+// dark Light mode themes
+// Option for auto delete LogEntries
+// Firebase and new log system in feature if we want more complexity / other options.
 
 
 class HomeActivity : AppCompatActivity() {
@@ -165,7 +169,7 @@ class HomeActivity : AppCompatActivity() {
     private fun loadLogs() {
         val sharedPreferences = getSharedPreferences("app_logs", MODE_PRIVATE)
         val allLogs = sharedPreferences.getString("logs", "") ?: ""
-        val logs = allLogs.split("\n") // Split by newline to get individual log entries
+        val logs = allLogs.split("\n")
         val logEntries = mutableListOf<Pair<Long, String>>()
 
         for (log in logs) {
@@ -199,18 +203,16 @@ class HomeActivity : AppCompatActivity() {
 
 
 
-    // Move these functions to the top level of your class
     private fun saveLog(logEntry: String) {
         val sharedPreferences = getSharedPreferences("app_logs", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         val existingLogs = sharedPreferences.getString("logs", "") ?: ""
 
-        // Check if the log entry already contains a timestamp
         val formattedDate = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date())
         val logWithTimestamp = if (logEntry.contains(formattedDate)) {
-            logEntry // Log entry already contains a timestamp
+            logEntry
         } else {
-            "$formattedDate - $logEntry" // Add timestamp to the log entry
+            "$formattedDate - $logEntry"
         }
 
         val updatedLogs = if (existingLogs.isEmpty()) logWithTimestamp else "$existingLogs\n$logWithTimestamp"
@@ -223,8 +225,7 @@ class HomeActivity : AppCompatActivity() {
     private fun clearAllLogs() {
         val sharedPreferences = getSharedPreferences("app_logs", MODE_PRIVATE)
         sharedPreferences.edit().clear().apply()
-        // Notify the user that all logs have been deleted (optional)
-        Toast.makeText(this, "All logs have been deleted", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "All logs have been deleted", Toast.LENGTH_SHORT).show() //Toast Message Confirmation
     }
 
 
