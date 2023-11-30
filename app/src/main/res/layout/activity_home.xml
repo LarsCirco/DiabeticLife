@@ -1,0 +1,93 @@
+<!-- activity_home.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/currentBG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/current_bg"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:autofillHints=" " />
+
+    <EditText
+        android:id="@+id/targetBG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/target_bg"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:autofillHints=" " />
+
+    <EditText
+        android:id="@+id/carbs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/carbs"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/CarbRatio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/carb_ratio"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/Correction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/correction"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate"/>
+
+    <Button
+        android:id="@+id/viewLogsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view"/>
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="start"
+        android:textAlignment="textStart"/>
+
+    <Button
+        android:id="@+id/deleteAllButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_all"
+        android:visibility="gone"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp" />
+
+
+
+
+
+
+
+
+</LinearLayout>

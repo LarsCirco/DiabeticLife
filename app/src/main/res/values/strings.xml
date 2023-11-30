@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Diabetic Life</string>
+    <string name="current_bg">Current BG</string>
+    <string name="target_bg">Target BG</string>
+    <string name="carbs">carbs</string>
+    <string name="carb_ratio">Carb Ratio</string>
+    <string name="correction">Correction</string>
+    <string name="calculate">Calculate</string>
+    <string name="view">View Logs</string>
+    <string name="insulin_for_carbs">Insulin for Carbs: %1$s</string>
+    <string name="insulin_for_correction">Insulin for Correction: %1$s</string>
+    <string name="total_insulin">Total Insulin: %1$s</string>
+    <string name="enter_valid_numbers">Please enter valid positive numbers.</string>
+    <string name="invalid_input">Invalid input. Please enter only numerical values.</string>
+    <string name="home">Home</string>
+    <string name="calculation_result">
+            Carbs: %1$s\n
+        Correction: %2$s\n
+        Total Insulin: %3$s\n
+    </string>
+    <string name="log_entry_format">Timestamp: %1$s %2$s,</string>
+    <string name="delete_all" >Delete all Logs</string>
+
+
+</resources>
